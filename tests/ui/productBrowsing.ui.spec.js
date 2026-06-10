@@ -29,3 +29,9 @@ test('TC03 - Navegar a categoria Monitors', async ({page}) => {
   await page.goto(`${WEB}`);
 
   await page.getByRole('link', { name: 'Monitors' }).click();
+
+  await page.waitForTimeout(1000);
+
+    const productos = page.locator('.card-title');
+    await expect(productos.first()).toBeVisible();
+});
