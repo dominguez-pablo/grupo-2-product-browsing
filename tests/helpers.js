@@ -21,6 +21,4 @@ module.exports = {
   API,
   WEB,
   QA_CREDENTIALS,
-  generarUsuario,
-  crearUsuarioPorAPI,
 };
