@@ -11,8 +11,7 @@ module.exports = defineConfig({
   // Tiempo maximo que puede tardar un test antes de fallar
   timeout: 30 * 1000,
 
-  // Corre los tests en paralelo
-  fullyParallel: true,
+  fullyParallel: false,
 
   // Cantidad de reintentos si un test falla
   retries: 0,
@@ -38,13 +37,13 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
     // Descomentar para correr tambien en Firefox y Safari:
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+     {
+       name: 'firefox',
+       use: { ...devices['Desktop Firefox'] },
+     },
+     {
+       name: 'webkit',
+       use: { ...devices['Desktop Safari'] },
+     },
   ],
 });

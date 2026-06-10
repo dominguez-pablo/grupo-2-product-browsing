@@ -10,13 +10,12 @@ Suite de tests automatizados sobre **DemoBlaze** usando Playwright.
 
 > Completen con los nombres de su grupo:
 
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
+- Nombre Apellido: Dominguez Pablo
+- Nombre Apellido: 
 
-**Grupo N - Seccion asignada:** (ej: Cart Management)
+**Grupo N - Seccion asignada:**
 
----
+--- Grupo 2 - Product Browsing
 
 ## Tecnologias
 
