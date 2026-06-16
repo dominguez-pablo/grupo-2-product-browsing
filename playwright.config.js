@@ -37,13 +37,14 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
     // Descomentar para correr tambien en Firefox y Safari:
-     {
-       name: 'firefox',
-       use: { ...devices['Desktop Firefox'] },
-     },
-     {
-       name: 'webkit',
-       use: { ...devices['Desktop Safari'] },
-     },
+    //{
+    //  name: 'firefox',
+    //    use: { ...devices['Desktop Firefox'] },
+    //  },
+    //  {
+    //    name: 'webkit',
+    //    use: { ...devices['Desktop Safari'] },
+    //  },
+     
   ],
 });
