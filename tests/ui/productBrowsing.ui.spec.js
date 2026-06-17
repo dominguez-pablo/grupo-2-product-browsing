@@ -70,3 +70,18 @@ test('TC06 - Abrir detalle de producto', async ({ page }) => {
   // En el detalle se ve el boton Add to cart
   await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
 });
+
+
+test('TC07 - Volver al catalogo desde detalle', async ({ page }) => {
+  await page.goto(`${WEB}`);
+
+  // Entrar al detalle de un producto
+  await page.locator('.card-title a').first().click();
+  await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
+
+  // Volver al catalogo con el logo
+  await page.getByRole('link', { name: 'PRODUCT STORE' }).click();
+
+  // Verificar que volvimos al catalogo
+  await expect(page.locator('.card-title').first()).toBeVisible();
+});
