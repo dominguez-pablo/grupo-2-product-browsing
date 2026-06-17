@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import {WEB} from '../helpers';
-/*
+
 
 test('TC01 - Navegar a categoria Phones', async ({page}) => {
   await page.goto(`${WEB}`);
@@ -33,22 +33,23 @@ test('TC03 - Navegar a categoria Monitors', async ({page}) => {
     const productos = page.locator('.card-title');
     await expect(productos.first()).toBeVisible();
 });
-*/
+
 
 
 test('TC04 - Volver al Home desde categoria', async ({ page }) => {
   await page.goto(`${WEB}`);
 
-  // Entrar a una categoria
   await page.getByRole('link', { name: 'Phones' }).click();
   await page.waitForTimeout(1000);
 
-  // Volver al Home con el logo / link principal
   await page.getByRole('link', { name: 'PRODUCT STORE' }).click();
-
-  // Verificar que volvimos: deben verse las categorias de nuevo
+  
+  await expect(page.locator('.card-title').first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Laptops' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Monitors' })).toBeVisible();
+
 });
+
 
 test('TC05 - Validar nombre y precio del producto', async ({page}) => {
   await page.goto(`${WEB}`);
@@ -60,28 +61,30 @@ test('TC05 - Validar nombre y precio del producto', async ({page}) => {
   await expect(producto).toBeVisible();
   await expect(precio).toBeVisible();
 });
+
   
 test('TC06 - Abrir detalle de producto', async ({ page }) => {
-  await page.goto(`${WEB}`);
+await page.goto(`${WEB}`);
 
-  // Click en el primer producto
-  await page.locator('.card-title a').first().click();
+await page.locator('.card-title a').first().click();
 
-  // En el detalle se ve el boton Add to cart
-  await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
+await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
 });
 
 
 test('TC07 - Volver al catalogo desde detalle', async ({ page }) => {
   await page.goto(`${WEB}`);
 
-  // Entrar al detalle de un producto
+
   await page.locator('.card-title a').first().click();
   await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
 
-  // Volver al catalogo con el logo
+
   await page.getByRole('link', { name: 'PRODUCT STORE' }).click();
 
-  // Verificar que volvimos al catalogo
+
   await expect(page.locator('.card-title').first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Laptops' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Monitors' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Phones' })).toBeVisible();
 });

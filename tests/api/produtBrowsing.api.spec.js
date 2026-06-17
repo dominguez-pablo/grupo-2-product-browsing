@@ -53,6 +53,7 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
 
   expect(producto).toBeTruthy();
   expect(precio).toBeTruthy();
+  console.log('tipo de dato de precio:', typeof precio);
   expect(typeof precio).toBe('number');
   expect(precio).toBeGreaterThan(0);
 
@@ -70,6 +71,7 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
 
   expect(productoLaptop).toBeTruthy();
   expect(precioLaptop).toBeTruthy();
+    console.log('tipo de dato de precio:', typeof precio);
   expect(typeof precioLaptop).toBe('number');
   expect(precioLaptop).toBeGreaterThan(0);
 
@@ -87,6 +89,7 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
 
   expect(productoMonitor).toBeTruthy();
   expect(precioMonitor).toBeTruthy();
+  console.log('tipo de dato de precio:', typeof precio);
   expect(typeof precioMonitor).toBe('number');
   expect(precioMonitor).toBeGreaterThan(0);
 });
