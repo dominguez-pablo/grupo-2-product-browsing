@@ -61,3 +61,12 @@ test('TC05 - Validar nombre y precio del producto', async ({page}) => {
   await expect(precio).toBeVisible();
 });
   
+test('TC06 - Abrir detalle de producto', async ({ page }) => {
+  await page.goto(`${WEB}`);
+
+  // Click en el primer producto
+  await page.locator('.card-title a').first().click();
+
+  // En el detalle se ve el boton Add to cart
+  await expect(page.getByRole('link', { name: 'Add to cart' })).toBeVisible();
+});
