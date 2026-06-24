@@ -48,14 +48,14 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
   expect(dataPhones).toHaveProperty('Items');
   expect(dataPhones.Items.length).toBeGreaterThan(0);
 
-  const producto = dataPhones.Items[0].title;
-  const precio = dataPhones.Items[0].price;
+  const productoPhone = dataPhones.Items[0].title;
+  const precioPhone = dataPhones.Items[0].price;
 
-  expect(producto).toBeTruthy();
-  expect(precio).toBeTruthy();
-  console.log('tipo de dato de precio:', typeof precio);
-  expect(typeof precio).toBe('number');
-  expect(precio).toBeGreaterThan(0);
+  expect(productoPhone).toBeTruthy();
+  expect(precioPhone).toBeTruthy();
+  console.log('tipo de dato de precio:', typeof precioPhone);
+  expect(typeof precioPhone).toBe('number');
+  expect(precioPhone).toBeGreaterThan(0);
 
   const responseLaptops = await request.post(`${API}/bycat`, {
     data: { cat: 'notebook' },
@@ -71,7 +71,7 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
 
   expect(productoLaptop).toBeTruthy();
   expect(precioLaptop).toBeTruthy();
-    console.log('tipo de dato de precio:', typeof precio);
+    console.log('tipo de dato de precio:', typeof precioLaptop);
   expect(typeof precioLaptop).toBe('number');
   expect(precioLaptop).toBeGreaterThan(0);
 
@@ -89,7 +89,7 @@ test('TC05- Validar nombre y precio del producto', async ({request}) => {
 
   expect(productoMonitor).toBeTruthy();
   expect(precioMonitor).toBeTruthy();
-  console.log('tipo de dato de precio:', typeof precio);
+  console.log('tipo de dato de precio:', typeof precioMonitor);
   expect(typeof precioMonitor).toBe('number');
   expect(precioMonitor).toBeGreaterThan(0);
 });
