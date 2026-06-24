@@ -11,7 +11,6 @@ Suite de tests automatizados sobre **DemoBlaze** usando Playwright.
 > Completen con los nombres de su grupo:
 
 - Nombre Apellido: Dominguez Pablo
-- Nombre Apellido: 
 
 **Grupo N - Seccion asignada:**
 

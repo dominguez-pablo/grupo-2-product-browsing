@@ -30,7 +30,7 @@ test('TC03 - Navegar a categoria Monitors', async ({page}) => {
 
   await page.waitForTimeout(1000);
 
-  const productos = page.locator('.card-title');git 
+  const productos = page.locator('.card-title');
   await expect(productos.first()).toBeVisible();
 
 });
